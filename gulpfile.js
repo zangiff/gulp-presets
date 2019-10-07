@@ -14,16 +14,20 @@ const gulp 						= require("gulp"),
 			del							= require("del");
 
 //Карта подключения файлов и папок
-const jsFiles = [
-	"./app/js_modules/lib.js",
-	"./app/js_modules/main.js"
+const 	jsFiles = [
+							"./app/js_modules/lib.js",
+							"./app/js_modules/main.js"
 ],
-			buildingPaths = [
-	"./app/**/*html",
-	"./app/**/*.min.css",
-	"./app/**/*.min.js",
-	"./app/fonts/**/*",
-	"./app/libs/**/*"
+				buildingPaths = [
+				//Изображения экспортируются отдельно, в таске imgCompress
+								"./app/**/*.html",
+								"./app/**/*.css",
+								"./app/**/*.js",
+								"./app/**/*.php",
+								"./app/**/*.eot",
+								"./app/**/*.ttf",
+								"./app/**/*.woff",
+								"./app/**/*.woff2"
 ];
 
 //Таск на стили CSS, преобразование SASS-CSS, rename, autoprefixer и cleanCSS

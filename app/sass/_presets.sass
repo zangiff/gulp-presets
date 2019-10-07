@@ -1,0 +1,65 @@
+*
+  box-sizing: border-box
+
+html, body
+  font-family: 'Roboto', Arial, Tahoma, sans-serif
+  font-weight: 300
+  font-size: 16px
+  color: #333
+
+body
+  overflow-x: hidden
+
+body, ul, ol
+  margin: 0
+  padding: 0
+
+ul, ol
+  list-style: none
+
+input, textarea
+  outline: none
+  &:active
+    outline: none
+  &:focus
+    outline: none
+
+a
+  transition: all .2s ease-in-out
+  &:link
+    color: #333
+    text-decoration: none
+  &:active
+    color: #f33
+  &:visited
+    color: darken(#333, 50%)
+
+img
+  max-width: 100%
+  height: auto
+  display: inline-block
+
+.container
+  max-width: 1000px
+  padding: 0
+  margin: 0 auto
+
+.hidden
+  display: none
+
+.invisible
+  opacity: 0
+
+.clearfix::after
+  content: ""
+  display: table
+  clear: both
+
+.d-block
+  display: block
+
+.d-inline-block
+  display: inline-block
+
+.w-100
+  width: 100%
