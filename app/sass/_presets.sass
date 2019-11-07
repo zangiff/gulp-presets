@@ -6,9 +6,10 @@ html, body
   font-weight: 300
   font-size: 16px
   color: #333
-
-body
+  width: 100%
+  max-width: 100%
   overflow-x: hidden
+  padding: 0 !important
 
 body, ul, ol
   margin: 0
@@ -19,20 +20,13 @@ ul, ol
 
 input, textarea
   outline: none
-  &:active
-    outline: none
-  &:focus
+  &:active, &:focus
     outline: none
 
 a
   transition: all .2s ease-in-out
-  &:link
-    color: #333
+  &:link, &:active, &:visited
     text-decoration: none
-  &:active
-    color: #f33
-  &:visited
-    color: darken(#333, 50%)
 
 img
   max-width: 100%
@@ -40,9 +34,17 @@ img
   display: inline-block
 
 .container
-  max-width: 1000px
-  padding: 0
+  max-width: 1170px
+  padding: 15px
   margin: 0 auto
+  @media only screen and(max-width: 1169px)
+    max-width: 1130px
+  @media only screen and(max-width: 991px)
+    max-width: 960px
+  @media only screen and(max-width: 767px)
+    max-width: 730px
+  @media only screen and(max-width: 575px)
+    max-width: 530px
 
 .hidden
   display: none

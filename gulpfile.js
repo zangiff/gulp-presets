@@ -10,12 +10,13 @@ const gulp 						= require("gulp"),
 			concat					= require("gulp-concat"),
 			cache						= require("gulp-cache"),
 			cleanCSS				= require("gulp-clean-css"),
+			babel 					= require('gulp-babel'),
 			uglify					= require("gulp-uglify"),
 			del							= require("del");
 
 //Карта подключения файлов и папок
 const 	jsFiles = [
-							"./app/js_modules/lib.js",
+							"./app/js_modules/data.js",
 							"./app/js_modules/main.js"
 ],
 				buildingPaths = [
@@ -27,7 +28,14 @@ const 	jsFiles = [
 								"./app/**/*.eot",
 								"./app/**/*.ttf",
 								"./app/**/*.woff",
-								"./app/**/*.woff2"
+								"./app/**/*.woff2",
+								"./app/**/*.xml",
+								"./app/**/*.txt",
+								"./app/**/*.json",
+								"./app/**/*.gif",
+								"./app/**/*.jpg",
+								"./app/**/*.png",
+								"./app/**/*.svg"
 ];
 
 //Таск на стили CSS, преобразование SASS-CSS, rename, autoprefixer и cleanCSS
@@ -58,12 +66,19 @@ gulp.task("css_style", () => {
 //Таск на обработку JS-скриптов
 gulp.task("scripts", () => {
 	return gulp.src(jsFiles)
-	.pipe(concat("scripts.js"))
-	.pipe(uglify({
+  .pipe(sourcemaps.init())
+  .pipe(babel({
+		presets: ["@babel/preset-env"],
+		plugins: ["transform-remove-strict-mode"],
+		compact: true}))
+  .pipe(concat('scripts.js'))
+  .pipe(uglify({
 		toplevel: true
 	}))
+  .on("error", console.error.bind(console))
 	.pipe(rename({suffix: ".min"}))
-	.pipe(gulp.dest("./app/js"))
+  .pipe(sourcemaps.write('./'))
+  .pipe(gulp.dest("./app/js/"))
 	.pipe(browserSync.stream());
 });
 
