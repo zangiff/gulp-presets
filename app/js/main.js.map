@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.ts"],"names":[],"mappings":";AAAA,SAAS,KAAK,CAAC,QAAgB;IAC3B,OAAO,CAAC,GAAG,CAAC,wGAAsB,QAAU,CAAC,CAAC;AAClD,CAAC;AACD,KAAK,CAAC,YAAY,CAAC,CAAC","file":"main.js","sourcesContent":["function hello(compiler: string) {\r\n    console.log(`Очередной текст от ${compiler}`);\r\n}\r\nhello(\"TypeScript\");\r\n"]}

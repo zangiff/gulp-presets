@@ -1,18 +1,29 @@
 {
-  "name": "firstgulp",
-  "version": "1.0.0",
-  "description": "My first Gulp Project",
+  "name": "gulptemplate",
+  "version": "1.0.1",
+  "description": "Gulp4 settings for my projects",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test"
   },
+  "browserslist": [
+    "> 1%",
+    "last 3 versions",
+    "Android >= 4",
+    "IE >= 8"
+  ],
   "author": "Vitya",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zangiff/gulp-presets.git"
+  },
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
     "babel-plugin-transform-remove-strict-mode": "0.0.2",
     "browser-sync": "^2.26.7",
+    "css-mqpacker": "^7.0.0",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
@@ -21,10 +32,13 @@
     "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^6.1.1",
+    "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
+    "gulp-typescript": "^5.0.1",
     "gulp-uglify": "^3.0.2",
-    "imagemin-pngquant": "^8.0.0"
+    "imagemin-pngquant": "^8.0.0",
+    "typescript": "^3.7.2"
   }
 }
